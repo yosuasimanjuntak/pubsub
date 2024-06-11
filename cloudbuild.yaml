@@ -6,7 +6,10 @@ steps:
     - |
       pip install google-cloud-storage
       pip install google-cloud-pubsub
-      python scripts/process_file.py --bucket $_BUCKET_NAME --object $_OBJECT_NAME
+      python scripts/process_file.py --bucket $BUCKET_NAME --object $OBJECT_NAME
+
+options:
+  logging: CLOUD_LOGGING_ONLY
 
 substitutions:
   _BUCKET_NAME: ''
