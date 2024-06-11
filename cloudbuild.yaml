@@ -1,8 +1,13 @@
 steps:
 - name: 'python:3.8'
-  entrypoint: 'python'
-  args: ['main.py']
+  entrypoint: 'bash'
+  args:
+    - '-c'
+    - |
+      pip install google-cloud-storage
+      pip install google-cloud-pubsub
+      python scripts/process_file.py --bucket $BUCKET_NAME --object $OBJECT_NAME
 
 substitutions:
-  _BUCKET_NAME: ''
-  _OBJECT_NAME: ''
+  _BUCKET_NAME: 'bucket-99'
+  _OBJECT_NAME: 'object-99'
