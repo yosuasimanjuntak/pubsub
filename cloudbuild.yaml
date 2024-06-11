@@ -1,0 +1,8 @@
+steps:
+- name: 'python:3.8'
+  entrypoint: 'python'
+  args: ['scripts/process_file.py', '--bucket', '$_BUCKET_NAME', '--object', '$_OBJECT_NAME']
+
+substitutions:
+  _BUCKET_NAME: ''
+  _OBJECT_NAME: ''
