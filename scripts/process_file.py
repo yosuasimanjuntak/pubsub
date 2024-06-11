@@ -9,7 +9,7 @@ def process_file(bucket_name, object_name):
     # Download the file's contents
     #contents = blob.download_as_text()
     print(f'Processing file {object_name} from bucket {bucket_name}')
-    print(f'Contents: {contents}')
+    #print(f'Contents: {contents}')
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Process a file from Cloud Storage.')
